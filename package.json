@@ -1,0 +1,28 @@
+{
+  "name": "datos-cdelu",
+  "version": "1.0.0",
+  "description": "API Rest for consuming data on http://www.cdeluruguay.gob.ar/index.php/gobierno/administracion-de-su-gobierno",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rfrancou/datos-cdelu.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Rodrigo Francou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rfrancou/datos-cdelu/issues"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.3",
+    "morgan": "^1.8.2",
+    "request": "^2.81.0"
+  },
+  "homepage": "https://github.com/rfrancou/datos-cdelu#readme"
+}
