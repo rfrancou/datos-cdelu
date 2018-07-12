@@ -13,3 +13,14 @@ exports.bajas = (req, res, next) => {
   })
 }
 
+exports.bajasMotivosAnio = (req, res, next) => {
+  let year = parseInt(req.params.anio)
+  if (!utils.validateYear(year)) { return res.status(400).json({error: 'Año incorrecto'}) }
+
+  let url = `${urlBase}M.php?anio=${year}`
+  utils.scrapper(url, true).then((table) => {
+    res.json({anio: year, motivos: table})
+  }, (err) => {
+    res.status(404).send({error: err})
+  })
+}
