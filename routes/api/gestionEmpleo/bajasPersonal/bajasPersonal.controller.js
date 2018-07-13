@@ -24,3 +24,15 @@ exports.bajasMotivosAnio = (req, res, next) => {
     res.status(404).send({error: err})
   })
 }
+
+exports.bajasConveniosAnio = (req, res, next) => {
+  let year = parseInt(req.params.anio)
+  if (!utils.validateYear(year)) { return res.status(400).json({error: 'Año incorrecto'}) }
+
+  let url = `${urlBase}C.php?anio=${year}`
+  utils.scrapper(url, true).then((table) => {
+    res.json({anio: year, convenios: table})
+  }, (err) => {
+    res.status(404).send({error: err})
+  })
+}
