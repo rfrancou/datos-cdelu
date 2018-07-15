@@ -85,3 +85,51 @@ exports.scrapper = function (url, id) {
     })
   })
 }
+
+exports.scrapperTableWithTitle = function (url, op) {
+  return new Promise((resolve, reject) => {
+    request(url, (error, response, body) => {
+      if (error || response.statusCode === 404) { reject(new Error('Not Found')) }
+
+      const $ = cheerio.load(body)
+
+      var items = [] // arr for store all obj (each row is an obj)
+      var headerTable = [] // header of the table (each one will be a field of each obj)
+
+      // get header table - removes spaces and special characters
+      $('tr.tituloTabla > td').each(function (i, elem) {
+        headerTable[i] = removeSpacesAndSpecialCharacters($(this).text())
+      })
+
+      if (op) {
+        console.log(headerTable)
+        headerTable.splice(2, 1)
+      } else {
+        console.log(headerTable)
+        headerTable.splice(1, 1)
+      }
+
+      // parse each row of the table to obj and adds it to items[]
+      $('tr.textoTabla').each(function (index) {
+        var current = $(this).children()
+        var obj = {}
+
+        headerTable.forEach((e, i) => {
+          let attribute = headerTable[i]
+          if (current[i].children[0].hasOwnProperty('children')) {
+            obj[attribute] = current[i].children[0].children[0].data
+          } else {
+            obj[attribute] = current[i].children[0].data
+          }
+        })
+        items.push(obj)
+      })
+
+      const fixedItems = fixNumbers(items) //parse possible numbers
+      if (fixedItems.length === 0) {
+        reject(new Error('No existe ninguna instancia para dicha consulta. Verifique los parametros.'))
+      }
+      resolve(fixedItems)
+    })
+  })
+}
