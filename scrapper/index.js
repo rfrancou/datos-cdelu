@@ -102,10 +102,8 @@ exports.scrapperTableWithTitle = function (url, op) {
       })
 
       if (op) {
-        console.log(headerTable)
         headerTable.splice(2, 1)
       } else {
-        console.log(headerTable)
         headerTable.splice(1, 1)
       }
 
