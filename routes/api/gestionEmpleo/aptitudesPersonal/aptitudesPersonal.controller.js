@@ -24,3 +24,17 @@ exports.allPorAnio = (req, res, next) => {
     res.status(404).send({error: err})
   })
 }
+
+exports.allSeccionesAnioMes = (req, res, next) => {
+  let year = parseInt(req.params.anio)
+  let month = parseInt(req.params.mes)
+  if (!utils.validateYear(year)) { return res.status(400).json({error: 'Año incorrecto'}) }
+  if (!utils.validateMonth(month)) { return res.status(400).json({error: 'Mes incorrecto'}) }
+
+  let url = `${urlBase}S.php?anio=${year}&mes=${month}`
+  utils.scrapperTableWithTitle(url, true).then((table) => {
+    res.json({anio: year, mes: month, secciones: table})
+  }, (err) => {
+    res.status(404).send({error: err})
+  })
+}
