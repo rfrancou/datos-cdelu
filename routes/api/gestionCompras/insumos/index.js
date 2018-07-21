@@ -6,5 +6,6 @@ const router = express.Router()
 
 router.get('/', controller.gastoTotal)
 router.get('/:anio', controller.gastoTotalPorAnio)
+router.get('/:anio/rubros',controller.rubrosAnio)
 
 module.exports = router
