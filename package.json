@@ -4,7 +4,9 @@
   "description": "API Rest for consuming data on http://www.cdeluruguay.gob.ar/index.php/gobierno/administracion-de-su-gobierno",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "doc": "apidoc -e node_modules/"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,8 @@
     "morgan": "^1.8.2",
     "request": "^2.81.0"
   },
-  "homepage": "https://github.com/rfrancou/datos-cdelu#readme"
+  "homepage": "https://github.com/rfrancou/datos-cdelu#readme",
+  "devDependencies": {
+    "apidoc": "^0.17.6"
+  }
 }
