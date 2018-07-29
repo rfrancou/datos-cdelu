@@ -6,4 +6,6 @@ router.use('/gestionEmpleo/aptitudes', require('./gestionEmpleo/aptitudesPersona
 router.use('/gestionEmpleo/bajas', require('./gestionEmpleo/bajasPersonal'))
 router.use('/gestionCompras/insumos', require('./gestionCompras/insumos'))
 
+router.use('/rubros', require('./rubros'))
+
 module.exports = router
