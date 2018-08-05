@@ -8,4 +8,6 @@ router.use('/gestionCompras/insumos', require('./gestionCompras/insumos'))
 
 router.use('/rubros', require('./rubros'))
 
+router.use('/proveedores', require('./proveedores'))
+
 module.exports = router
