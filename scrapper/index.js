@@ -4,7 +4,7 @@ const request = require('request')
 const cheerio = require('cheerio')
 
 exports.validateYear = function (year) {
-  return year > 2008 && year < 2019
+  return year > 2008 && year < 2020
 }
 
 exports.validateMonth = function (month) {
