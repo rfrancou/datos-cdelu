@@ -21,6 +21,7 @@
     "url": "https://github.com/rfrancou/datos-cdelu/issues"
   },
   "dependencies": {
+    "memory-cache": "^0.2.0",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.15.3",
     "morgan": "^1.8.2",
