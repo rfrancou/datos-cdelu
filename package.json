@@ -24,7 +24,7 @@
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.15.3",
     "memory-cache": "^0.2.0",
-    "morgan": "^1.8.2",
+    "morgan": "^1.9.1",
     "request": "^2.81.0"
   },
   "homepage": "https://github.com/rfrancou/datos-cdelu#readme",
