@@ -29,6 +29,6 @@
   },
   "homepage": "https://github.com/rfrancou/datos-cdelu#readme",
   "devDependencies": {
-    "apidoc": "^0.17.6"
+    "apidoc": "^0.53.1"
   }
 }
