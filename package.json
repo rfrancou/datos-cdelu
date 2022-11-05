@@ -25,7 +25,7 @@
     "express": "^4.15.3",
     "memory-cache": "^0.2.0",
     "morgan": "^1.9.1",
-    "request": "^2.81.0"
+    "request": "^2.88.2"
   },
   "homepage": "https://github.com/rfrancou/datos-cdelu#readme",
   "devDependencies": {
